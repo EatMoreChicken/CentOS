@@ -22,7 +22,12 @@ hard drive you created for the vm.
 
 Click `Done` and `Begin Installation`.
 
-While CentOS installs, you must setup a `Root Password`.
+While CentOS installs, you must setup a `Root Password` and create a `New User`.
 
 Once the install is done, you will be promted to `Reboot`.
+
+The reboot process shouldn't need any user input. But, once it has booted up, login with the new user you created while CentOS was installing.
+
+If you successfully logged in, Congragulations! You have installed CentOS. If you couldn't login, try login in with `localhost login: root`
+and `Password: (The root password you set)`. Once you login with root, **BE SURE YOU CREATE A NEW USER**. If that didn't work, try reinstalling CentOS from the beginning.
 
