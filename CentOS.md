@@ -42,6 +42,20 @@ And now `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VM
 
 To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same cam be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
 
-Change `BOOTROTO=dhcp` to `BOOTROTO=static`
+Change `BOOTROTO=dhcp` to `BOOTROTO=static` and `ONBOOT=no` to `ONBOOT=yes`
 
 Add these lines to the end of the document
+```
+IPADDR=172.20.240.11
+NETMASK=255.255.255.0
+GATEWAY=172.20.240.254
+DNS1=8.8.8.8
+NM_CONTROLLED=no
+
+```
+
+Now execute the command `ifdown enp0s3` and then `ifup enp0s3`. (Again, if you are VMWare, your adapter is most likely ens33 or something similar.)
+
+Lets varify everything worked by doing `ping 8.8.8.8` and `ping wwww.google.com` and making sure both responds.
+
+
