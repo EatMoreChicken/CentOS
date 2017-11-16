@@ -31,3 +31,17 @@ The reboot process shouldn't need any user input. But, once it has booted up, lo
 If you successfully logged in, Congragulations! You have installed CentOS. If you couldn't login, try login in with `localhost login: root`
 and `Password: (The root password you set)`. Once you login with root, **BE SURE YOU CREATE A NEW USER**. If that didn't work, try reinstalling CentOS from the beginning.
 
+## Setting up CentOS
+
+Do `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for 
+VMWare vms.
+
+Type `su root` to obtain root
+
+And now `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VMWare vm, use `vi /etc/sysconfig/network-scripts/ifcfg-ens33`)
+
+To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same cam be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
+
+Change `BOOTROTO=dhcp` to `BOOTROTO=static`
+
+Add these lines to the end of the document
