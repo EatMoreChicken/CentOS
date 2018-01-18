@@ -51,7 +51,6 @@ NETMASK=255.255.255.0
 GATEWAY=172.20.240.254
 DNS1=8.8.8.8
 NM_CONTROLLED=no
-
 ```
 
 Now execute the command `ifdown enp0s3` and then `ifup enp0s3`. (Again, if you are VMWare, your adapter is most likely ens33 or something similar.)
