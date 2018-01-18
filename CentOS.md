@@ -33,7 +33,7 @@ and `Password: (The root password you set)`. Once you login with root, **BE SURE
 
 ## Setting up CentOS
 
-Do `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for 
+Execute `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for 
 VMWare vms.
 
 Type `su root` to obtain root
