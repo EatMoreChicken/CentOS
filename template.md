@@ -94,7 +94,7 @@ Install the database using the following commands:
 3. `sudo systemctl status mariadb` will ensure that MariaDB is installed and started.
 4. `sudo mysql_secure_installation` is used to secure the database.
 
-## Install PHP
+## Installing PHP
 Install PHP using the following commands:
 1. `sudo yum install php php-mysql`
 2. `sudo yum install nano` installs nano. Nano will be used to edit `.php` files that will be later created.
@@ -104,12 +104,51 @@ Install PHP using the following commands:
     Run `sudo systemctl status httpd.service` to verify that the service is back up and running.
 5. Now you can visit `172.20.240.11/info.php` from the Windows 10 machine and it will now display information about PHP that is created in step 3.
 ## Adding a User to the Database
+Add a user to the database using the follwoing commands:
 1. `mysql -u root –p` to login as root
 
     After entering MYSQL, the terminal should look something like this:
     ```bash
     mysql>
     ```
+2. Execute the following commands to add a user to the database:
+    - `CREATE DATABASE wordpress` Creates a database called `wordpress`
+    - `CREATE USER web@localhost IDENTIFIED BY 'password';` Creates a user called `web@localhost` that has a password of `password`(You can change the password to something you prefer).
+    - `GRANT ALL PRIVILEGES ON wordpress.* TO web@localhost IDENTIFIED BY 'password';` Grants all privileges for the database `wordpress` to the user `web@localhost` with the password `password`.
+    - `FLUSH PRIVILEGES;`
+    - `exit`
+ 
+## Installing Wordpress
+Install Wordpress using the following commands:
+1. `sudo yum install php-gd`
+   Use `sudo service httpd restart` to restart the service.
+2. `cd ~` Will take you back to the home directory.
+3. `sudo yum install wget` Will install `wget`, which is needed to retrive the zip file needed to install Wordpress.
+4. `wget http://wordpress.org/latest.tar.gz` Downloads a zip file for Wordpress.
+5. `tar xzvf latest.tar.gz` Unzips the file that was downnloaded.
+6. `sudo rsync -avP ~/wordpress/ /var/www/html/` is used to move the `wordpress` directory to its new home at `/var/www/html/`.
+7. `mkdir /var/www/html/wp-content/uploads` Creates a new directory.
+8. `sudo chown -R apache:apache /var/www/html/*` Changes the owner for the directories.
+
+## Configuring Wordpress
+1. `cd /var/www/html` Moves to the `html` directory.
+2. `cp wp-config-sample.php wp-config.php` Copies a new file.
+3. `nano wp-config.php` Edit the file to acompany these new changes:
+    ```bash
+    define('DB_NAME', 'wordpress');
+    define('DB_USER', ‘web')
+    define('DB_PASSWORD', 'password');
+    ```
+4. Visit `172.20.240.11` from the Windows 10 machine to ensure that the service is running properly.
+
+## Installing Wordpress from Web GUI
+1. Visit `http://172.20.240.11/wp-admin/install.php` from the Windows 10 machine.
+
+
+
+ 
+
+
 
 
     
