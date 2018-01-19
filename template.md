@@ -5,8 +5,8 @@
 
 ### Table
 
-1. [Downloading and First-Time Startup of CentOS](#id-link-to-section)
-2. [Setting up CentOS](#id-link-to-section)
+1. [Downloading and First-Time Startup of CentOS](#downloadingcentos)
+2. [Setting up CentOS](#settingupcentos)
 3. [Installing Apachce](#id-link-to-section)
 4. [Installing the Database](#id-link-to-section)
 5. [Installing PHP](#id-link-to-section)
@@ -15,7 +15,7 @@
 8. [Configuring Wordpress](#id-link-to-section)
 9. [Installing Wordpress from Web GUI](#id-link-to-section)
 
-## Downloading and First-Time Startup of CentOS <a id="id-link-to-section"></a>
+## Downloading and First-Time Startup of CentOS <a id="downloadingcentos"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
     I'm going to be using the CentOS Minimal ISO and install everything we need.
@@ -46,7 +46,7 @@ hard drive you created for the vm.
     If you successfully logged in, Congragulations! You have installed CentOS. If you couldn't login, try login in with `localhost login: root`
 and `Password: (The root password you set)`. Once you login with root, **BE SURE YOU CREATE A NEW USER**. If that didn't work, try reinstalling CentOS from the beginning.
 
-## Setting up CentOS <a id="id-link-to-section"></a>
+## Setting up CentOS <a id="settingupcentos"></a>
 
 1. Execute `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for 
 VMWare vms.
