@@ -1,11 +1,9 @@
+## Downloading and Installing CentOS 
+### Contact
+-Slack: @vcharly
+-Email: emlincharly@gmail.com
 
----
-layout: post
-title: Setting up CentOS and Wordpress
-author: Varghese Emlin Charly
----
-
-## Downloading and installing CentOS 
+### Table
 
 First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
