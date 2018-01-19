@@ -170,8 +170,8 @@ Install Wordpress using the following commands:
 2. Follow the prompted instructions and procced into setting. Use the following images to guide you through the process. (The images are provided by Wordpress)
 
 <p align="center">
-  <img src="step1?raw=true" alt="Step 1 Image"/>
-  <img src="step2?raw=true" alt="Step 2 Image"/>
+  <img src="step1.png?raw=true" alt="Step 1 Image"/>
+  <img src="step2.png?raw=true" alt="Step 2 Image"/>
 </p>
 
 ## Troubleshooting <a id="trouble"></a>
