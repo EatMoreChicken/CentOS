@@ -6,6 +6,7 @@
 ### Table
 
 1. [Downloading and First Startup of CentOS](#id-link-to-section)
+2. [
 
 ## Downloading and First Startup of CentOS <a id="id-link-to-section"></a>
 First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
@@ -49,9 +50,17 @@ And now `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VM
 
 To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same cam be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
 
-Change `BOOTROTO=dhcp` to `BOOTROTO=static` and `ONBOOT=no` to `ONBOOT=yes`
-
-Add these lines to the end of the document
+You need to change the configuration from
+```
+BOOTROTO=dhcp
+ONBOOT=no
+```
+to
+```
+BOOTROTO=static
+ONBOOT=yes
+```
+Once that has been added, add these lines to the end of the configuration document
 ```
 IPADDR=172.20.240.11
 NETMASK=255.255.255.0
