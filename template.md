@@ -7,6 +7,13 @@
 
 1. [Downloading and First-Time Startup of CentOS](#id-link-to-section)
 2. [Setting up CentOS](#id-link-to-section)
+3. [Installing Apachce](#id-link-to-section)
+4. [Installing the Database](#id-link-to-section)
+5. [Installing PHP](#id-link-to-section)
+6. [Adding a User to the Database](#id-link-to-section)
+7. [Installing Wordpress](#id-link-to-section)
+8. [Configuring Wordpress](#id-link-to-section)
+9. [Installing Wordpress from Web GUI](#id-link-to-section)
 
 ## Downloading and First-Time Startup of CentOS <a id="id-link-to-section"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
@@ -77,7 +84,7 @@ VMWare vms.
 
     Lets varify everything worked by doing `ping 8.8.8.8` and `ping wwww.google.com` and making sure both responds.
     
-## Installing Apachce
+## Installing Apachce <a id="id-link-to-section"></a>
 Install Apachce using the following commands:
 1. `sudo yum update` will ensure that the next lines will run smoothly.
 2. `sudo yum install httpd`
@@ -87,14 +94,14 @@ Install Apachce using the following commands:
     
     We want Apache to start on boot, so we can run `sudo systemctl enable httpd.service` to enable that. (At this point you can visit `172.20.240.11` from the Windows 10 machine to ensure everything is running properly.
     
-## Installing the Database
+## Installing the Database <a id="id-link-to-section"></a>
 Install the database using the following commands:
 1. `sudo yum install mariadb-server mariadb`
 2. `sudo systemctl start mariadb`
 3. `sudo systemctl status mariadb` will ensure that MariaDB is installed and started.
 4. `sudo mysql_secure_installation` is used to secure the database.
 
-## Installing PHP
+## Installing PHP <a id="id-link-to-section"></a>
 Install PHP using the following commands:
 1. `sudo yum install php php-mysql`
 2. `sudo yum install nano` installs nano. Nano will be used to edit `.php` files that will be later created.
@@ -103,7 +110,7 @@ Install PHP using the following commands:
 4. `sudo systemctl restart httpd.service` restarts the service.
     Run `sudo systemctl status httpd.service` to verify that the service is back up and running.
 5. Now you can visit `172.20.240.11/info.php` from the Windows 10 machine and it will now display information about PHP that is created in step 3.
-## Adding a User to the Database
+## Adding a User to the Database <a id="id-link-to-section"></a>
 Add a user to the database using the follwoing commands:
 1. `mysql -u root –p` to login as root
 
@@ -118,7 +125,7 @@ Add a user to the database using the follwoing commands:
     - `FLUSH PRIVILEGES;`
     - `exit`
  
-## Installing Wordpress
+## Installing Wordpress <a id="id-link-to-section"></a>
 Install Wordpress using the following commands:
 1. `sudo yum install php-gd`
    Use `sudo service httpd restart` to restart the service.
@@ -130,7 +137,7 @@ Install Wordpress using the following commands:
 7. `mkdir /var/www/html/wp-content/uploads` Creates a new directory.
 8. `sudo chown -R apache:apache /var/www/html/*` Changes the owner for the directories.
 
-## Configuring Wordpress
+## Configuring Wordpress <a id="id-link-to-section"></a>
 1. `cd /var/www/html` Moves to the `html` directory.
 2. `cp wp-config-sample.php wp-config.php` Copies a new file.
 3. `nano wp-config.php` Edit the file to acompany these new changes:
@@ -141,7 +148,7 @@ Install Wordpress using the following commands:
     ```
 4. Visit `172.20.240.11` from the Windows 10 machine to ensure that the service is running properly.
 
-## Installing Wordpress from Web GUI
+## Installing Wordpress from Web GUI <a id="id-link-to-section"></a>
 1. Visit `http://172.20.240.11/wp-admin/install.php` from the Windows 10 machine.
 
 
