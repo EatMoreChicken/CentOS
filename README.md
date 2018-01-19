@@ -1,4 +1,3 @@
-# Configuring CentOS E-Commerce Site Using WordPress
 ## Writen by Varghese Emlin Charly
 ----------------------------------
 ### Contact
