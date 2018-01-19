@@ -28,7 +28,9 @@
 ## Summary <a id="summary"></a>
 The CentOS machine will be hosting a public e-commerce site created using Wordpress. When you are finished, the site will be accessible from the WAN network through the Windows 10 machine.
 
-![](chart.jpg)
+<p align="center">
+  <img src="chart.jpg?raw=true" alt="Topology Image"/>
+</p>
 
 ## Downloading and First-Time Startup of CentOS <a id="downloadingcentos"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
@@ -167,8 +169,10 @@ Install Wordpress using the following commands:
 1. Visit `http://172.20.240.11/wp-admin/install.php` from the Windows 10 machine.
 2. Follow the prompted instructions and procced into setting. Use the following images to guide you through the process. (The images are provided by Wordpress)
 
-![](step1.png)
-![](step2.png)
+<p align="center">
+  <img src="step1?raw=true" alt="Step 1 Image"/>
+  <img src="step2?raw=true" alt="Step 2 Image"/>
+</p>
 
 ## Troubleshooting <a id="trouble"></a>
 If you have any issues installing Wordpress, please refer to Wordpress's official documentation. The documentation for the installation process can be found [here](https://codex.wordpress.org/Installing_WordPress).
