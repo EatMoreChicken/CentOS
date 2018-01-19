@@ -1,19 +1,30 @@
-## Downloading and Installing CentOS 
+## Downloading and Installing CentOS and Wordpress
 ### Contact
 - Slack: @vcharly
 - Email: emlincharly@gmail.com
 
-### Table
+### Table of Content
 
-1. [Downloading and First-Time Startup of CentOS](#downloadingcentos)
-2. [Setting up CentOS](#settingupcentos)
-3. [Installing Apachce](#installapache)
-4. [Installing the Database](#installdb)
-5. [Installing PHP](#installphp)
-6. [Adding a User to the Database](#adduser)
-7. [Installing Wordpress](#installwordpress)
-8. [Configuring Wordpress](#configwordpress)
-9. [Installing Wordpress from Web GUI](#wordpressgui)
+- [Prerequisites](#prereq)
+- [Summart](#summary)
+- [Downloading and First-Time Startup of CentOS](#downloadingcentos)
+- [Setting up CentOS](#settingupcentos)
+- [Installing Apachce](#installapache)
+- [Installing the Database](#installdb)
+- [Installing PHP](#installphp)
+- [Adding a User to the Database](#adduser)
+- [Installing Wordpress](#installwordpress)
+- [Configuring Wordpress](#configwordpress)
+- [Installing Wordpress from Web GUI](#wordpressgui)
+
+## Prerequisities <a id="prereq"></a>
+1. Have pfSense Running
+2. Have Ubuntu DNS Running
+3. Have Windows 10 Running
+4. Have ISP Gateway Running
+
+## Summary <a id="summary"></a>
+The CentOS machine will be hosting a public e-commerce site created using Wordpress. When you are finished, the site will be accessible from the WAN network through the Windows 10 machine.
 
 ## Downloading and First-Time Startup of CentOS <a id="downloadingcentos"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
