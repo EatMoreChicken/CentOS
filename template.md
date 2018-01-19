@@ -7,7 +7,7 @@
 
 1. [Downloading and First Startup of CentOS](#id-link-to-section)
 
-## Downloading and First Startup of CentOS
+## Downloading and First Startup of CentOS <a id="id-link-to-section"></a>
 First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
 I'm going to be using the CentOS Minimal ISO and install everything we need.
