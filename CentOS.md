@@ -1,4 +1,10 @@
-# Setting up CentOS with Wordpress
+
+---
+layout: post
+title: Setting up CentOS and Wordpress
+author: Varghese Emlin Charly
+---
+
 ## Downloading and installing CentOS 
 
 First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
