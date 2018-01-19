@@ -1,7 +1,7 @@
 ## Downloading and Installing CentOS 
 ### Contact
--Slack: @vcharly
--Email: emlincharly@gmail.com
+- Slack: @vcharly
+- Email: emlincharly@gmail.com
 
 ### Table
 
