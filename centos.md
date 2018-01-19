@@ -26,6 +26,8 @@
 ## Summary <a id="summary"></a>
 The CentOS machine will be hosting a public e-commerce site created using Wordpress. When you are finished, the site will be accessible from the WAN network through the Windows 10 machine.
 
+![](chart.jpg)
+
 ## Downloading and First-Time Startup of CentOS <a id="downloadingcentos"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
