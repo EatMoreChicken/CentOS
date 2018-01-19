@@ -7,7 +7,7 @@
 ### Table of Content
 
 - [Prerequisites](#prereq)
-- [Summart](#summary)
+- [Summary](#summary)
 - [Downloading and First-Time Startup of CentOS](#downloadingcentos)
 - [Setting up CentOS](#settingupcentos)
 - [Installing Apachce](#installapache)
@@ -17,6 +17,7 @@
 - [Installing Wordpress](#installwordpress)
 - [Configuring Wordpress](#configwordpress)
 - [Installing Wordpress from Web GUI](#wordpressgui)
+- [Troubleshooting](#trouble)
 
 ## Prerequisities <a id="prereq"></a>
 1. Have pfSense Running
@@ -164,9 +165,13 @@ Install Wordpress using the following commands:
 
 ## Installing Wordpress from Web GUI <a id="wordpressgui"></a>
 1. Visit `http://172.20.240.11/wp-admin/install.php` from the Windows 10 machine.
+2. Follow the prompted instructions and procced into setting. Use the following images to guide you through the process. (The images are provided by Wordpress)
 
+![](step1.png)
+![](step2.png)
 
-
+## Troubleshooting <a id="trouble"></a>
+If you have any issues installing Wordpress, please refer to Wordpress's official documentation. The documentation for the installation process can be found [here](https://codex.wordpress.org/Installing_WordPress)
  
 
 
