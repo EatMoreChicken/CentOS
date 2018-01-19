@@ -1,4 +1,6 @@
-## Downloading and Installing CentOS and Wordpress
+# Configuring CentOS E-Commerce Site Using WordPress
+## Writen by Varghese Emlin Charly
+----------------------------------
 ### Contact
 - Slack: **@vcharly**
 - Email: emlincharly@gmail.com
