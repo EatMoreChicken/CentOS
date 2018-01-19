@@ -1,6 +1,6 @@
 ## Downloading and Installing CentOS and Wordpress
 ### Contact
-- Slack: @vcharly
+- Slack: **@vcharly**
 - Email: emlincharly@gmail.com
 
 ### Table of Content
@@ -29,7 +29,7 @@ The CentOS machine will be hosting a public e-commerce site created using Wordpr
 ## Downloading and First-Time Startup of CentOS <a id="downloadingcentos"></a>
 1. First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
-    I'm going to be using the CentOS Minimal ISO and install everything we need.
+    We are going to be using the CentOS Minimal ISO and install everything we need.
 
     Once the ISO is done downloading, proceed to create a new virtual machine inside VMWare
 or Virtual Box using the downloaded ISO. Use the recommended settings for the allocated ram, storage, and cpu cores.
