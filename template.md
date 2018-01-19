@@ -5,9 +5,12 @@
 
 ### Table
 
+1. [Downloading and First Startup of CentOS](#id-link-to-section)
+
+## Downloading and First Startup of CentOS
 First, download the CentOS ISO. It can be found [here](https://www.centos.org/download/)
 
-I'm going to be using the CentOS Minimal ISO and we will install everything we need.
+I'm going to be using the CentOS Minimal ISO and install everything we need.
 
 Once the ISO is done downloading, proceed to create a new virtual machine inside VMWare
 or Virtual Box using the downloaded ISO. Use the recommended settings for the allocated ram, storage, and cpu cores.
