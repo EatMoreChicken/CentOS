@@ -65,11 +65,51 @@ VMWare vms.
     IPADDR=172.20.240.11
     NETMASK=255.255.255.0
     GATEWAY=172.20.240.254
-    DNS1=8.8.8.8
+    DNS1=172.20.240.23
     NM_CONTROLLED=no
     ```
-
-4. Now execute the command `ifdown enp0s3` and then `ifup enp0s3`. (Again, if you are VMWare, your adapter is most likely ens33 or something similar.)
+    `DNS1=172.20.240.23` will make sure that DNS requests will be passed through the Ubuntu DNS.
+    
+4. Now to ensure that CentOS has an IP address, execute these commands (Again, if you are VMWare, your adapter is most likely ens33 or something similar).
+    - `sudo ifdown enp0s3`
+    - `sudo ifup enp0s3`
+    - `ip a`
 
     Lets varify everything worked by doing `ping 8.8.8.8` and `ping wwww.google.com` and making sure both responds.
+    
+## Installing Apachce
+Install Apachce using the following commands:
+1. `sudo yum update` will ensure that the next lines will run smoothly.
+2. `sudo yum install httpd`
+    Next, `sudo iptables -F` needs to be run to flush the iptables.
+    
+    Now, you can restart the service by running `sudo systemctl start httpd.service`
+    
+    We want Apache to start on boot, so we can run `sudo systemctl enable httpd.service` to enable that. (At this point you can visit `172.20.240.11` from the Windows 10 machine to ensure everything is running properly.
+    
+## Installing the Database
+Install the database using the following commands:
+1. `sudo yum install mariadb-server mariadb`
+2. `sudo systemctl start mariadb`
+3. `sudo systemctl status mariadb` will ensure that MariaDB is installed and started.
+4. `sudo mysql_secure_installation` is used to secure the database.
 
+## Install PHP
+Install PHP using the following commands:
+1. `sudo yum install php php-mysql`
+2. `sudo yum install nano` installs nano. Nano will be used to edit `.php` files that will be later created.
+3. `sudo nano /var/www/html/info.php` will create and open a new `.php` file in that directory.
+    Add `<?php phpinfo(); ?>` to the file. This will be used to display general information about PHP later on.
+4. `sudo systemctl restart httpd.service` restarts the service.
+    Run `sudo systemctl status httpd.service` to verify that the service is back up and running.
+5. Now you can visit `172.20.240.11/info.php` from the Windows 10 machine and it will now display information about PHP that is created in step 3.
+## Adding a User to the Database
+1. `mysql -u root –p` to login as root
+
+    After entering MYSQL, the terminal should look something like this:
+    ```bash
+    mysql>
+    ```
+
+
+    
