@@ -160,7 +160,7 @@ Install Wordpress using the following commands:
 3. `nano wp-config.php` Edit the file to acompany these new changes:
     ```bash
     define('DB_NAME', 'wordpress');
-    define('DB_USER', ‘web')
+    define('DB_USER', 'web')
     define('DB_PASSWORD', 'password');
     ```
 4. Visit `172.20.240.11` from the Windows 10 machine to ensure that the service is running properly.
