@@ -1,7 +1,7 @@
 ## Writen by Varghese Emlin Charly
 ----------------------------------
 ### Contact
-- Slack: **<mkp-red>@vcharly</mkp-red>**
+- Slack: **@vcharly**
 - Email: emlincharly@gmail.com
 
 ### Table of Contents
