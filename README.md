@@ -38,7 +38,7 @@ The CentOS machine will be hosting a public e-commerce site created using Wordpr
     We are going to be using the CentOS Minimal ISO and install everything we need.
 
     Once the ISO is done downloading, proceed to create a new virtual machine inside VMWare or Virtualbox using the downloaded ISO. Use the recommended settings for the allocated ram, storage, and cpu cores.
-And when asked for network adapter, allow CentOS to access the Host-Only, DMZ adapter.
+And when asked for network adapter, allow CentOS to access the Host-Only, DMZ adapter. Adding the DMZ adapter allows the pfSense box to control the network traffic going in and out of the CentOS box.
 
     Boot the CentOS vm to proceed with the installation 
 
@@ -52,7 +52,7 @@ And when asked for network adapter, allow CentOS to access the Host-Only, DMZ ad
 
     Click `Done` and `Begin Installation`.
 
-3. While CentOS installs, you must setup a `Root Password` and create a `New User`.
+3. While CentOS installs, you must setup a `Root Password` and create a `New User`. Make sure you take a note of this infromation because you will be using this later to login.
 
     Once the install is done, you will be prompted to `Reboot`.
 
@@ -63,12 +63,11 @@ and `Password: (The root password you set)`. Once you login with root, **BE SURE
 
 ## Setting up CentOS <a id="settingupcentos"></a>
 
-1. Execute `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for 
-VMWare vms.
+1. Execute `ip a` and take note of your network adapter. It should be something along the lines of `enp0s3` for Virtual Box vms and `ens33` for VMWare vms.
 
-2. Type `su root` to obtain root
+2. Type `su root` to obtain root. The `su`is sometimes referred to as the "superuser" or "switch user" command. Using this command is one of the easiest way to switch your current user to root.
 
-3. And then, `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VMWare vm, use `vi /etc/sysconfig/network-scripts/ifcfg-ens33`)
+3. And then, `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VMWare vm, use `vi /etc/sysconfig/network-scripts/ifcfg-ens33`) Vi is a text editior you can use in the terminal.
 
     To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same can be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
 
@@ -82,6 +81,7 @@ VMWare vms.
     BOOTROTO=static
     ONBOOT=yes
     ```
+    ===TODO===
     Once that has been added, add these lines to the end of the configuration document
     ``` bash
     IPADDR=172.20.240.11
