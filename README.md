@@ -1,4 +1,4 @@
-## Writen by Varghese Emlin Charly
+## Written by Varghese Emlin Charly
 ----------------------------------
 ### Contact :smiley:
 - Slack: **@vcharly**
@@ -10,7 +10,7 @@
 - [Summary](#summary)
 - [Downloading and First-Time Startup of CentOS](#downloadingcentos)
 - [Setting up CentOS](#settingupcentos)
-- [Installing Apachce](#installapache)
+- [Installing Apache](#installapache)
 - [Installing the Database](#installdb)
 - [Installing PHP](#installphp)
 - [Adding a User to the Database](#adduser)
@@ -19,7 +19,7 @@
 - [Installing Wordpress from Web GUI](#wordpressgui)
 - [Troubleshooting](#trouble)
 
-## Prerequisities <a id="prereq"></a>
+## Prerequisites <a id="prereq"></a>
 1. Have pfSense Running
 2. Have Ubuntu DNS Running
 3. Have Windows 10 Running
@@ -37,30 +37,28 @@ The CentOS machine will be hosting a public e-commerce site created using Wordpr
 
     We are going to be using the CentOS Minimal ISO and install everything we need.
 
-    Once the ISO is done downloading, proceed to create a new virtual machine inside VMWare
-or Virtual Box using the downloaded ISO. Use the recommended settings for the allocated ram, storage, and cpu cores.
+    Once the ISO is done downloading, proceed to create a new virtual machine inside VMWare or Virtualbox using the downloaded ISO. Use the recommended settings for the allocated ram, storage, and cpu cores.
 And when asked for network adapter, allow CentOS to access the Host-Only, DMZ adapter.
 
-    Boot the CentOS vm to proceed with the installation.
+    Boot the CentOS vm to proceed with the installation 
 
 2. Once booted, choose the `Install CentOS 7` option.
 
     Now you will be greeted with a `Welcome to CentOS 7` screen.
 
-    Choose your prefered language and procced to the `Installation Summary` screen.
+    Choose your prefered language and proceed to the `Installation Summary` screen.
 
-    Before the installation can begin, you must choose the installation destination. Click on `Installation Destination` and choose the virtual 
-hard drive you created for the vm.
+    Before the installation can begin, you must choose the installation destination. Click on `Installation Destination` and choose the virtual hard drive you created for the vm. This will ensure that the Operating system is installed to the correct location.
 
     Click `Done` and `Begin Installation`.
 
 3. While CentOS installs, you must setup a `Root Password` and create a `New User`.
 
-    Once the install is done, you will be promted to `Reboot`.
+    Once the install is done, you will be prompted to `Reboot`.
 
 4. The reboot process shouldn't need any user input. But, once it has booted up, login with the new user you created while CentOS was installing.
 
-    If you successfully logged in, Congragulations! You have installed CentOS. If you couldn't login, try login in with `localhost login: root`
+    If you successfully logged in, Congratulations! You have installed CentOS. If you couldn't login, try login in with `localhost login: root`
 and `Password: (The root password you set)`. Once you login with root, **BE SURE YOU CREATE A NEW USER**. If that didn't work, try reinstalling CentOS from the beginning.
 
 ## Setting up CentOS <a id="settingupcentos"></a>
@@ -72,7 +70,7 @@ VMWare vms.
 
 3. And then, `vi /etc/sysconfig/network-scripts/ifcfg-enp0s3`. (If you are using a VMWare vm, use `vi /etc/sysconfig/network-scripts/ifcfg-ens33`)
 
-    To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same cam be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
+    To edit text in `vi`, you must click `i` to enter "insert mode" and once you are done editing, click `ESC` to exit insert mode, now click `SHIFT` and `:` at the same time and enter `wq`. `wq` means write to the file and quit the file. The same can be done by doing `x` instead of `wq`. Refer to [this website](https://www.cs.colostate.edu/helpdocs/vi.html) to learn more about vi.
 
     You need to change the configuration from
     ``` bash
@@ -99,10 +97,10 @@ VMWare vms.
     - `sudo ifup enp0s3`
     - `ip a`
 
-    Lets varify everything worked by doing `ping 8.8.8.8` and `ping wwww.google.com` and making sure both responds.
+    Let's verify everything worked by doing `ping 8.8.8.8` and `ping wwww.google.com` and making sure both responds.
     
-## Installing Apachce <a id="installapache"></a>
-Install Apachce using the following commands:
+## Installing Apache <a id="installapache"></a>
+Install Apache using the following commands:
 1. `sudo yum update` will ensure that the next lines will run smoothly.
 2. `sudo yum install httpd`
     Next, `sudo iptables -F` needs to be run to flush the iptables.
@@ -128,7 +126,7 @@ Install PHP using the following commands:
     Run `sudo systemctl status httpd.service` to verify that the service is back up and running.
 5. Now you can visit `172.20.240.11/info.php` from the Windows 10 machine and it will now display information about PHP that is created in step 3.
 ## Adding a User to the Database <a id="adduser"></a>
-Add a user to the database using the follwoing commands:
+Add a user to the database using the following commands:
 1. `mysql -u root –p` to login as root
 
     After entering MYSQL, the terminal should look something like this:
@@ -147,9 +145,9 @@ Install Wordpress using the following commands:
 1. `sudo yum install php-gd`
    Use `sudo service httpd restart` to restart the service.
 2. `cd ~` Will take you back to the home directory.
-3. `sudo yum install wget` Will install `wget`, which is needed to retrive the zip file needed to install Wordpress.
+3. `sudo yum install wget` Will install `wget`, which is needed to retrieve the zip file needed to install Wordpress.
 4. `wget http://wordpress.org/latest.tar.gz` Downloads a zip file for Wordpress.
-5. `tar xzvf latest.tar.gz` Unzips the file that was downnloaded.
+5. `tar xzvf latest.tar.gz` Unzips the file that was downloaded.
 6. `sudo rsync -avP ~/wordpress/ /var/www/html/` is used to move the `wordpress` directory to its new home at `/var/www/html/`.
 7. `mkdir /var/www/html/wp-content/uploads` Creates a new directory.
 8. `sudo chown -R apache:apache /var/www/html/*` Changes the owner for the directories.
@@ -157,7 +155,7 @@ Install Wordpress using the following commands:
 ## Configuring Wordpress <a id="configwordpress"></a>
 1. `cd /var/www/html` Moves to the `html` directory.
 2. `cp wp-config-sample.php wp-config.php` Copies a new file.
-3. `nano wp-config.php` Edit the file to acompany these new changes:
+3. `nano wp-config.php` Edit the file to accompany these new changes:
     ```bash
     define('DB_NAME', 'wordpress');
     define('DB_USER', 'web')
@@ -167,7 +165,7 @@ Install Wordpress using the following commands:
 
 ## Installing Wordpress from Web GUI <a id="wordpressgui"></a>
 1. Visit `http://172.20.240.11/wp-admin/install.php` from the Windows 10 machine.
-2. Follow the prompted instructions and procced into setting. Use the following images to guide you through the process. (The images are provided by Wordpress)
+2. Follow the prompted instructions and proceed into setting. Use the following images to guide you through the process. (The images are provided by Wordpress)
 
 <p align="center">
   <img src="step1.png?raw=true" alt="Step 1 Image"/>
@@ -176,6 +174,8 @@ Install Wordpress using the following commands:
 
 ## Troubleshooting <a id="trouble"></a>
 If you have any issues installing Wordpress, please refer to Wordpress's official documentation. The documentation for the installation process can be found [here](https://codex.wordpress.org/Installing_WordPress).
+
+
  
 
 
